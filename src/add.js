@@ -1,6 +1,6 @@
 const electron = require('electron')
 const path = require('path')
-const remote = electron.remote
+const remote = electron.remote.BrowserWindow
 
 const closeBtn = document.getElementById('closeBtn')
 

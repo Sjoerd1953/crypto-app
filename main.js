@@ -1,5 +1,7 @@
-import { app, BrowserWindow, Menu } from 'electron';
-import { shell } from 'electron';
+const {app, BrowserWindow, Menu} = require('electron')
+const path = require('path')
+const url = require('url')
+const shell = require('electron').shell
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -32,7 +34,8 @@ function createWindow () {
                 label: 'CoinMarketCap',
                 click(){
                     shell.openExternal('http://coinmarketcap.com')
-                }
+                },
+                accelerator: 'CmdOrCtrl+Shift+C'
             },
             {type: 'separator'},
             {
@@ -42,6 +45,9 @@ function createWindow () {
                 }
             },
           ]
+      },
+      {
+          label: 'Info'
       }
   ])
 
