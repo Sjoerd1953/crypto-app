@@ -1,3 +1,4 @@
+//Dit is het 'main process'
 const {app, BrowserWindow, Menu} = require('electron')
 const path = require('path')
 const url = require('url')
@@ -6,6 +7,7 @@ const shell = require('electron').shell
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
+let menu
 
 function createWindow () {
   // Create the browser window.
@@ -25,7 +27,7 @@ function createWindow () {
     win = null
   })
 
-  var menu = Menu.buildFromTemplate([
+    menu = Menu.buildFromTemplate([
       {
           label: 'Menu',
           submenu: [
@@ -49,7 +51,7 @@ function createWindow () {
       {
           label: 'Info'
       }
-  ])
+    ])
 
   Menu.setApplicationMenu(menu);
 }
